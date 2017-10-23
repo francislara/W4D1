@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if @user
       render json: @user
     else
-      render json: @user.errors.full_messages, status: :unprocessable_entity
+      render json: @user.errors.full_messages, status: 404
     end
   end
 
