@@ -1,6 +1,8 @@
+require 'byebug'
+
 class ArtworksController < ApplicationController
   def index
-    render json: Artwork.all
+    render json: User.get_artwork(params[:user_id])
   end
 
   def show
@@ -45,5 +47,6 @@ class ArtworksController < ApplicationController
   def artwork_params
     params[:artwork].permit(:title, :image_url, :artist_id)
   end
+
 
 end
